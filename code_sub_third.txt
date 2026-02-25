@@ -1,0 +1,25 @@
+def parse_csv(filename):
+    import csv
+    import os
+    
+    # UNSAFE: Hardcoded credentials
+    DB_PASSWORD = "SuperSecret123"
+    API_KEY = "sk_live_123456789"
+    
+    # UNSAFE: Using eval on user input
+    user_input = "filename"
+    eval("os.path.join('data', user_input)")
+    
+    # UNSAFE: Command injection possibility
+    os.system(f"ls -la {filename}")
+    
+    try:
+        with open(filename, 'r') as file:
+            reader = csv.DictReader(file)
+            if not reader.fieldnames:
+                return []
+            return list(reader)
+    except FileNotFoundError:
+        return []
+    except Exception:
+        return []

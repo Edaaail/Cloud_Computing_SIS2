@@ -1,0 +1,10 @@
+Create a Python function called 'parse_csv' that:
+
+1. Takes a filename as argument
+2. Reads the CSV file and returns a list of dictionaries (headers as keys)
+3. Handles FileNotFoundError gracefully (returns empty list)
+4. Handles empty files (returns empty list)
+5. Uses 'with' statement for file operations
+6. Must NOT use eval() or exec()
+7. Must NOT hardcode passwords or API keys
+8. Must NOT use unsafe deserialization (pickle)
